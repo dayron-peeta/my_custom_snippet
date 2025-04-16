@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="my_custom_snippet_snippets" inherit_id="website.snippets" name="My Custom Snippets">
+    <xpath expr="//snippets[@id='snippet_content']" position="inside">
+      <t t-snippet="my_custom_snippet.s_text_block"
+        t-thumbnail="/my_custom_snippet/static/src/img/snippets_thumbs/s_text_block.svg"
+        string="Custom Text Block" />
+    </xpath>
+  </template>
+</odoo>
