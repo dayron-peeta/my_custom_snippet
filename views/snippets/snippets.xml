@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
   <template id="my_custom_snippet_snippets" inherit_id="website.snippets" name="My Custom Snippets">
+    <!-- Incluir el snippet como parte del contenido principal (Inner content), para que pueda
+    arrastrarse al sitio -->
     <xpath expr="//snippets[@id='snippet_content']" position="inside">
       <t t-snippet="my_custom_snippet.s_text_block"
         t-thumbnail="/my_custom_snippet/static/src/img/snippets_thumbs/s_text_block.svg"
         string="Custom Text Block" />
     </xpath>
+
+    <!--  Incluir en la categoría/group Texto del panel izquierdo -->
+    <!--  Indexar en la estructura para que aparezca en el buscador como sugerencia . -->
+    <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+      <t t-snippet="my_custom_snippet.s_text_block" string="Text" group="text">
+        <keywords>text, content, paragraph, article, body, description, information</keywords>
+      </t>
+    </xpath>
+
+
   </template>
 </odoo>

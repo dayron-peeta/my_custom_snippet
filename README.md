@@ -59,6 +59,14 @@ This file inherits the base snippet view from the `website` module and adds your
 
 This makes the snippet available in the inner section of the Website Editor.
 
+<xpath expr="//snippets[@id='snippet_structure']" position="inside">
+      <t t-snippet="my_custom_snippet.s_text_block" string="Text" group="text">
+        <keywords>text, content, paragraph, article, body, description, information</keywords>
+      </t>
+    </xpath>
+
+This include the snippet in the category/group Text from the left panel and Index in the structure so that it appears in the search engine as a suggestion
+
 ## Assets (Styles and Logic)
 
 ### SCSS (`s_text_block.scss`)
