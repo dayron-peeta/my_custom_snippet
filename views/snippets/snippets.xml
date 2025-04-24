@@ -9,12 +9,29 @@
         string="Custom Text Block" />
     </xpath>
 
-    <!--  Incluir en la categoría/group Texto del panel izquierdo -->
+    <!--  Asociarlo a la categoría/group Text del panel izquierdo -->
     <!--  Indexar en la estructura para que aparezca en el buscador como sugerencia . -->
     <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+
       <t t-snippet="my_custom_snippet.s_text_block" string="Text" group="text">
-        <keywords>text, content, paragraph, article, body, description, information</keywords>
+        <keywords>text, paragraph, article</keywords>
       </t>
+
+      <!-- También asociarlo al grupo 'x' (Categoría creada por nosotros)-->
+      <t t-snippet="my_custom_snippet.s_text_block" string="Text" group="x">
+        <keywords>x, text, content, paragraph, article, body, description, information</keywords>
+      </t>
+
+      <!-- También asociarlo a otro grupo 'custom' -->
+      <t t-snippet="my_custom_snippet.s_text_block" string="Text" group="custom">
+        <keywords>custom, personalized</keywords>
+      </t>
+    </xpath>
+
+    <!-- Crear una categoría "X" en el panel izquierdo -->
+    <xpath expr="//snippets[@id='snippet_groups']" position="inside">
+      <t snippet-group="x" t-snippet="website.s_snippet_group" string="X"
+        t-thumbnail="/my_custom_snippet/static/src/img/snippets_thumbs/s_x_group.svg" />
     </xpath>
 
 
